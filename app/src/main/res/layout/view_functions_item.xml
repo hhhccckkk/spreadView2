@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/main_bg"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/main_bg" />
+
+
+    <LinearLayout
+        android:id="@+id/mainLin"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_gravity="center"
+        android:background="@drawable/white_buttom_round_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            tools:visibility="visible"
+            android:visibility="gone"
+            android:id="@+id/functionTv1"
+            style="@style/function_style"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/function_chakan"
+            android:gravity="center"
+            android:text="查看" />
+
+        <TextView
+            tools:visibility="visible"
+            android:visibility="gone"
+            android:id="@+id/functionTv2"
+            style="@style/function_style"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/function_chakan"
+            android:gravity="center"
+            android:text="运输详情" />
+
+        <TextView
+            tools:visibility="visible"
+            android:visibility="gone"
+            android:id="@+id/functionTv3"
+            style="@style/function_style"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/function_chakan"
+            android:gravity="center"
+            android:text="删除" />
+
+        <TextView
+            tools:visibility="visible"
+            android:id="@+id/functionTv4"
+            style="@style/function_style"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/function_chakan"
+            android:gravity="center"
+            android:text="删除"
+            android:visibility="gone" />
+
+        <TextView
+            tools:visibility="visible"
+            android:id="@+id/functionTv5"
+            style="@style/function_style"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/function_chakan"
+            android:gravity="center"
+            android:text="恢复"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</LinearLayout>
