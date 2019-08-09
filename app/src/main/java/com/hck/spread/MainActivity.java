@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         listView = findViewById(R.id.list);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             datas.add("哈哈哈哈" + i);
         }
         listView.setAdapter(new MyAdapter());

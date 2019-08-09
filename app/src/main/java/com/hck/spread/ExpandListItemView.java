@@ -181,14 +181,15 @@ public class ExpandListItemView<T> extends LinearLayout {
     private void scrollTo() {
         ListView listView = data.getListView();
         if (listView != null) {
-            int lastVisiblePosition = data.getAllDataSize();
+            int lastVisiblePosition = listView.getLastVisiblePosition();
+           int firstVisiblePosition= listView.getFirstVisiblePosition();
             if (lastVisiblePosition <= 0) {
                 return;
             }
             int pos = data.getPosition();
-            if (pos >= 0 && pos + 1 == lastVisiblePosition) {
-                listView.setSelection(pos);
-                listView.smoothScrollToPosition(pos);
+            if (pos >= 0 && pos  == lastVisiblePosition) {
+                listView.setSelection(firstVisiblePosition+1);
+                listView.smoothScrollToPosition(firstVisiblePosition+1);
             }
         }
 
