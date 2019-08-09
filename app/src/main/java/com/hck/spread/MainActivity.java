@@ -69,30 +69,35 @@ public class MainActivity extends Activity {
                         functionView.showFunctionView(R.id.functionTv2);
                         functionView.showFunctionView(R.id.functionTv3);
                         functionView.showFunctionView(R.id.functionTv4);
+                        if (position%2==0){
+                            functionView.setFunctionViewEnable(R.id.functionTv3,true);
+                        }
+                        else {
+                            functionView.setFunctionViewEnable(R.id.functionTv3,false);
+                        }
                     }
 
                     @Override
                     public void bindFunctionItemListener(ExpandListItemView.FunctionView functionView, final int position, String data) {
-                        functionView.setOnClickHindFunctionView(false);
-                        functionView.buindListener(R.id.functionTv1, new View.OnClickListener() {
+                        functionView.bindListener(R.id.functionTv1, new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 showToast("functionTv1");
                             }
                         });
-                        functionView.buindListener(R.id.functionTv1, new View.OnClickListener() {
+                        functionView.bindListener(R.id.functionTv1, new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 showToast("functionTv1");
                             }
                         });
-                        functionView.buindListener(R.id.functionTv2, new View.OnClickListener() {
+                        functionView.bindListener(R.id.functionTv2, new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 showToast("functionTv2");
                             }
                         });
-                        functionView.buindListener(R.id.functionTv3, new View.OnClickListener() {
+                        functionView.bindListener(R.id.functionTv3, new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 showToast("functionTv3: "+position);

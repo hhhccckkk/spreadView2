@@ -54,6 +54,15 @@ public class ExpandListItemView<T> extends LinearLayout {
             }
         }
 
+        public void setFunctionViewEnable(int id, boolean enable) {
+            getFunctionView(id).setEnabled(enable);
+            if (enable) {
+                getFunctionView(id).setAlpha(1);
+            } else {
+                getFunctionView(id).setAlpha(0.4f);
+            }
+        }
+
         public void setFunctionItemView(int id, String title, int image) {
             TextView itemView = (TextView) getFunctionView(id);
             itemView.setText(title);
@@ -82,7 +91,7 @@ public class ExpandListItemView<T> extends LinearLayout {
             return null;
         }
 
-        public void buindListener(int id, final OnClickListener listener) {
+        public void bindListener(int id, final OnClickListener listener) {
             functionView.findViewById(id).setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -119,8 +128,8 @@ public class ExpandListItemView<T> extends LinearLayout {
         LinearLayout linearLayout2 = mainView.findViewById(R.id.event);  //用来放functionview
         linearLayout2.addView(functionView); // 加载功能菜单view
         functionView.setVisibility(View.GONE);
-        int position=data.getPosition();
-        listener.bindItemViewData(ItemView,position , data.getData());
+        int position = data.getPosition();
+        listener.bindItemViewData(ItemView, position, data.getData());
         listener.setFunctionView(FunctionView, position, data.getData());
         listener.bindFunctionItemListener(FunctionView, position, data.getData());
         changeItemViewContainerBg(R.drawable.white_round_bg);
@@ -182,14 +191,14 @@ public class ExpandListItemView<T> extends LinearLayout {
         ListView listView = data.getListView();
         if (listView != null) {
             int lastVisiblePosition = listView.getLastVisiblePosition();
-           int firstVisiblePosition= listView.getFirstVisiblePosition();
+            int firstVisiblePosition = listView.getFirstVisiblePosition();
             if (lastVisiblePosition <= 0) {
                 return;
             }
             int pos = data.getPosition();
-            if (pos >= 0 && pos  == lastVisiblePosition) {
-                listView.setSelection(firstVisiblePosition+1);
-                listView.smoothScrollToPosition(firstVisiblePosition+1);
+            if (pos >= 0 && pos == lastVisiblePosition) {
+                listView.setSelection(firstVisiblePosition + 1);
+                listView.smoothScrollToPosition(firstVisiblePosition + 1);
             }
         }
 
